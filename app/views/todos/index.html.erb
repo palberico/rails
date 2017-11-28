@@ -1,0 +1,17 @@
+<h1>Here is your todo list</h1>
+
+<% if @todos.empty? %>
+    <h1> Nice work, no work today</h1>
+    <% else %>
+        <% @todos.each do |todo| %>
+        <li>
+            <%= todo.name %>
+        </li>
+        <%= link_to 'Show Page', todo_path(todo) %>
+    <% end %>
+<% end %>
+
+
+
+
+
