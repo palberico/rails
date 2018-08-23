@@ -1,13 +1,2 @@
 <h1>Add an item</h1>
-<%= form_for @todos do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name%>
-
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-
-  <%= f.label :date %>
-  <%= f.text_area :date %>
-
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>

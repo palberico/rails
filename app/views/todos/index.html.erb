@@ -1,13 +1,17 @@
 <h1>Here is your todo list</h1>
 
 <% if @todos.empty? %>
-    <h1> Nice work, no work today</h1>
+    <h1> Nice job, your list is empty.</h1>
+    <h1> Perhaps you need to add something.</h1>
+        <%= link_to 'New Item', new_todo_path(@todos) %>
     <% else %>
         <% @todos.each do |todo| %>
         <li>
             <%= todo.name %>
         </li>
         <%= link_to 'Show Page', todo_path(todo) %>
+        <%= link_to 'Edit List', edit_todo_path(todo) %>
+        <%= link_to 'Delete', todo_path(todo), method: :delete %>
     <% end %>
 <% end %>
 
